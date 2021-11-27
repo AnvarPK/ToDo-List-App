@@ -5,9 +5,19 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Card, CardActions, CardContent, CardHeader, IconButton, Tooltip, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { styles } from './style';
+import Modal from '../ui/modal'
+import { useState } from 'react';
 
 const ToDo = (props) => {
     const { title, date, isGridType } = props;
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const handleClose = () => {
+        setModalOpen(false)
+    }
+    const handleDelete = () => {
+    }
+
 
     const renderCardHeaderAction = () => {
         return isGridType ? (
@@ -15,7 +25,7 @@ const ToDo = (props) => {
                 <DoneIcon />
             </IconButton>) : (
             <Tooltip title="Delete forever" placement="left">
-                <IconButton aria-label="delete-forever">
+                <IconButton aria-label="delete-forever" onClick={() => setModalOpen(true)}>
                     <DeleteForeverIcon />
                 </IconButton>
             </Tooltip>)
@@ -38,7 +48,14 @@ const ToDo = (props) => {
             </CardActions>
         </>
     )
-    return (
+
+    const renderModal = () => {
+        return (
+            <Modal open={modalOpen} handleClose={handleClose} handleDelete={handleDelete} />
+        )
+    }
+
+    return (<>
         <Card xs={2} sx={{ ...styles.card }}>
             <CardHeader
                 action={renderCardHeaderAction()}
@@ -47,6 +64,8 @@ const ToDo = (props) => {
             />
             {isGridType && renderCardItems()}
         </Card>
+        {renderModal()}
+    </>
     )
 }
 
