@@ -1,9 +1,11 @@
+import AppBar from "../../components/appbar";
 
 const AppContainer = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <AppBar />
+
+        </>
     )
 }
 
