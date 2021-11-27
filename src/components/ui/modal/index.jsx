@@ -18,8 +18,8 @@ const Modal = (props) => {
                 {"Are you sure you want to permanently delete?"}
             </DialogTitle>
             <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={deletehandler} autoFocus>
+                <Button onClick={handleClose} autoFocus variant="contained" color="primary" >Cancel</Button>
+                <Button onClick={deletehandler} variant="contained" color="error" >
                     Delete Forever
                 </Button>
             </DialogActions>

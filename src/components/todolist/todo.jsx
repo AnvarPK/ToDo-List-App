@@ -21,11 +21,11 @@ const ToDo = (props) => {
 
     const renderCardHeaderAction = () => {
         return isGridType ? (
-            <IconButton aria-label="edit">
+            <IconButton aria-label="edit" color="success">
                 <DoneIcon />
             </IconButton>) : (
             <Tooltip title="Delete forever" placement="left">
-                <IconButton aria-label="delete-forever" onClick={() => setModalOpen(true)}>
+                <IconButton aria-label="delete-forever" color="error" onClick={() => setModalOpen(true)}>
                     <DeleteForeverIcon />
                 </IconButton>
             </Tooltip>)
@@ -39,10 +39,10 @@ const ToDo = (props) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing sx={styles.cardActions}>
-                <IconButton aria-label="edit">
+                <IconButton aria-label="edit"  color="primary">
                     <EditIcon />
                 </IconButton>
-                <IconButton aria-label="delete">
+                <IconButton aria-label="delete" color="error">
                     <DeleteIcon />
                 </IconButton>
             </CardActions>
