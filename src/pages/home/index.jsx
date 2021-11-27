@@ -1,19 +1,35 @@
-import { Button, Grid, Link } from "@mui/material"
-import { Box } from "@mui/system"
+import { Button, Grid, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import { APP_CONSTANTS } from "../../appconsts";
-import { styles } from "./style";
+import ToDoList from "../../components/todolist";
 import { NavLink } from "../../components/ui/navlink";
+import { styles } from "./style";
 
 const Home = () => {
     return (
         <>
-            <Box display="flex" justifyContent="flex-end" sx={styles.addTodo}>
-                <NavLink to={APP_CONSTANTS.ROUTES.CREATE_TODO} sx={{ ...styles.addTodo }} >
-                    <Button color="primary" variant="contained" sx={{ ...styles.addTodo }} >Add ToDo</Button>
+            <Box display="flex" justifyContent="flex-end" >
+                <NavLink to={APP_CONSTANTS.ROUTES.CREATE_TODO} sx={styles.addTodo}>
+                    <Button color="primary" variant="contained" >Add ToDo</Button>
                 </NavLink>
             </Box>
-            <Grid container display >
-                rt
+            <Grid container spacing={2} alignItems="flex-start">
+                <Grid container item xs={12} md={8} >
+                    <Grid item xs={12}>
+                        <Typography variant="h6" >To-Dos</Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <ToDoList />
+                    </Grid>
+                </Grid>
+                <Grid container item xs={4} sx={styles.deletedList}>
+                    <Grid item xs={12}>
+                        <Typography variant="h6" >Deleted To-Dos</Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <ToDoList viewType={APP_CONSTANTS.VIEW_TYPES.LIST} />
+                    </Grid>
+                </Grid>
             </Grid>
         </>
     )

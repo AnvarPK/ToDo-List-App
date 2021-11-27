@@ -5,5 +5,9 @@ export const APP_CONSTANTS = {
         DELETED_TODOS: '/deleted-todos',
         EDIT_TODO: '/edit-todo/:id',
 
+    },
+    VIEW_TYPES:{
+        LIST: 'list',
+        GRID: 'grid'
     }
 }
