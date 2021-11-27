@@ -5,7 +5,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Card, CardActions, CardContent, CardHeader, IconButton, Tooltip, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { APP_CONSTANTS } from '../../appconsts';
 import Modal from '../ui/modal';
+import { NavLink } from '../ui/navlink';
 import { styles } from './style';
 
 const ToDo = (props) => {
@@ -39,9 +41,11 @@ const ToDo = (props) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing sx={styles.cardActions}>
-                <IconButton aria-label="edit"  color="primary">
-                    <EditIcon />
-                </IconButton>
+                <NavLink to={`${APP_CONSTANTS.ROUTES.EDIT_TODO.replace(':id', 1)}`}>
+                    <IconButton aria-label="edit" color="primary">
+                        <EditIcon />
+                    </IconButton>
+                </NavLink>
                 <IconButton aria-label="delete" color="error">
                     <DeleteIcon />
                 </IconButton>

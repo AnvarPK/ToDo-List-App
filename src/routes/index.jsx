@@ -5,7 +5,7 @@ import { APP_CONSTANTS } from '../appconsts';
 import Home from '../pages/home';
 const CreateTodo = lazy(() => import('../pages/create'));
 const DeletedTodos = lazy(() => import('../pages/deleted'));
-const EditTodo = lazy(() => import('../pages/deleted'));
+const EditTodo = lazy(() => import('../pages/edit'));
 
 const Routes = () => {
     return (

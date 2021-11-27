@@ -4,5 +4,9 @@ export const styles = {
     },
     deletedList: {
         display: { xs: "none", md: "block" }
+    },
+    deletedToDoLink:{
+        display: { xs: "block", md: "none" },
+        marginRight: 1
     }
 }

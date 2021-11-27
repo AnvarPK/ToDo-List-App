@@ -11,10 +11,14 @@ const Home = () => {
     return (
         <>
             <Box display="flex" justifyContent="flex-end" >
+                <NavLink to={APP_CONSTANTS.ROUTES.DELETED_TODOS} sx={{...styles.addTodo, ...styles.deletedToDoLink }}>
+                    <Button color="error" variant="contained" >Deleted ToDos</Button>
+                </NavLink>
                 <NavLink to={APP_CONSTANTS.ROUTES.CREATE_TODO} sx={styles.addTodo}>
                     <Button color="primary" variant="contained" >Add ToDo</Button>
                 </NavLink>
             </Box>
+
             <Grid container spacing={2} alignItems="flex-start">
                 <Grid container item xs={12} md={8} >
                     <Grid item xs={12}>
@@ -29,7 +33,7 @@ const Home = () => {
                         <Typography variant="h6" >Deleted To-Dos</Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <ToDoList  viewType={APP_CONSTANTS.VIEW_TYPES.LIST} />
+                        <ToDoList viewType={APP_CONSTANTS.VIEW_TYPES.LIST} />
                     </Grid>
                 </Grid>
             </Grid>
