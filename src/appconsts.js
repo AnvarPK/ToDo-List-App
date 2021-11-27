@@ -1,4 +1,4 @@
-export const AppConsts = {
+export const APP_CONSTANTS = {
     ROUTES: {
         HOME: '/',
         CREATE_TODO: '/create-todo',
