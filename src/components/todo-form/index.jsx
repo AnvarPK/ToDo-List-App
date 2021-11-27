@@ -1,9 +1,12 @@
 import { Box, Button, FormControl, FormGroup, TextField } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { APP_CONSTANTS } from '../../appconsts';
 
 const ToDoForm = (props) => {
     const { buttonLabel, handleSubmit } = props;
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -18,6 +21,7 @@ const ToDoForm = (props) => {
                 ...prev, title: false
             }));
             handleSubmit(formData);
+            navigate(APP_CONSTANTS.ROUTES.HOME);
         } else {
             setErrors(prev => ({
                 ...prev, title: true

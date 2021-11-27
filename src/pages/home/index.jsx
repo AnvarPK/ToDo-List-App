@@ -1,17 +1,32 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { createSelector } from 'reselect';
 import { APP_CONSTANTS } from "../../appconsts";
 import ToDoList from "../../components/todolist";
 import { NavLink } from "../../components/ui/navlink";
 import { styles } from "./style";
+import { useSelector } from "react-redux";
 
-const heights = [150, 30, 90, 70, 90, 100, 150, 30, 50, 80];
+const ToDos = createSelector(
+    (state) => state.todos,
+    (todos) => todos.filter((todo) => !todo.isDeleted)
+)
+
+const DeletedTodos = createSelector(
+    (state) => state.todos,
+    (todos) => todos.filter((todo) => todo.isDeleted)
+)
+
 
 const Home = () => {
+
+    const todos = useSelector(ToDos)
+    const deletedTodos = useSelector(DeletedTodos)
+
     return (
         <>
             <Box display="flex" justifyContent="flex-end" >
-                <NavLink to={APP_CONSTANTS.ROUTES.DELETED_TODOS} sx={{...styles.addTodo, ...styles.deletedToDoLink }}>
+                <NavLink to={APP_CONSTANTS.ROUTES.DELETED_TODOS} sx={{ ...styles.addTodo, ...styles.deletedToDoLink }}>
                     <Button color="error" variant="contained" >Deleted ToDos</Button>
                 </NavLink>
                 <NavLink to={APP_CONSTANTS.ROUTES.CREATE_TODO} sx={styles.addTodo}>
@@ -25,7 +40,7 @@ const Home = () => {
                         <Typography variant="h6" >To-Dos</Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <ToDoList items={heights} />
+                        <ToDoList items={todos} />
                     </Grid>
                 </Grid>
                 <Grid container item xs={4} sx={styles.deletedList}>
@@ -33,7 +48,7 @@ const Home = () => {
                         <Typography variant="h6" >Deleted To-Dos</Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <ToDoList viewType={APP_CONSTANTS.VIEW_TYPES.LIST} />
+                        <ToDoList viewType={APP_CONSTANTS.VIEW_TYPES.LIST} items={deletedTodos} />
                     </Grid>
                 </Grid>
             </Grid>

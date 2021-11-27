@@ -3,23 +3,30 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import DoneIcon from '@mui/icons-material/Done';
 import EditIcon from '@mui/icons-material/Edit';
 import { Card, CardActions, CardContent, CardHeader, IconButton, Tooltip, Typography } from '@mui/material';
+import { formatDistance } from 'date-fns';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { APP_CONSTANTS } from '../../appconsts';
+import { removeTodo } from '../../redux/actions/todos';
 import Modal from '../ui/modal';
 import { NavLink } from '../ui/navlink';
 import { styles } from './style';
 
 const ToDo = (props) => {
-    const { title, date, isGridType } = props;
-    const [modalOpen, setModalOpen] = useState(false)
+    const { todo, isGridType } = props;
+    const [modalOpen, setModalOpen] = useState(false);
+    const dispatch = useDispatch()
 
     const handleClose = () => {
         setModalOpen(false)
     }
     const handleDelete = () => {
     }
-
+    const handleTodoRemove = () => {
+        console.log(todo.id)
+        dispatch(removeTodo(todo.id))
+    }
 
     const renderCardHeaderAction = () => {
         return isGridType ? (
@@ -37,7 +44,7 @@ const ToDo = (props) => {
         <>
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                    Description
+                    {todo.description}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing sx={styles.cardActions}>
@@ -46,7 +53,7 @@ const ToDo = (props) => {
                         <EditIcon />
                     </IconButton>
                 </NavLink>
-                <IconButton aria-label="delete" color="error">
+                <IconButton aria-label="delete" color="error" onClick={handleTodoRemove}>
                     <DeleteIcon />
                 </IconButton>
             </CardActions>
@@ -63,8 +70,8 @@ const ToDo = (props) => {
         <Card xs={2} sx={{ ...styles.card }}>
             <CardHeader
                 action={renderCardHeaderAction()}
-                title={title}
-                subheader={isGridType ? date : ''}
+                title={todo.title}
+                subheader={isGridType ? `Added ${formatDistance(todo.date,new Date(),{ addSuffix: true })}`: null}
             />
             {isGridType && renderCardItems()}
         </Card>
@@ -76,7 +83,7 @@ const ToDo = (props) => {
 export default ToDo
 
 ToDo.propTypes = {
-    title: PropTypes.string.isRequired,
+    todo: PropTypes.object.isRequired,
     date: PropTypes.string,
     isGridType: PropTypes.bool,
 }

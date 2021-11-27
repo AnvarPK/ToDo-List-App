@@ -1,9 +1,14 @@
 import { Grid, Typography } from "@mui/material"
 import ToDoForm from "../../components/todo-form"
-import ToDoListButton from "../../components/todolist/todolistbutton"
+import ToDoListButton from "../../components/todolist/todolistbutton";
+import { useDispatch } from "react-redux"
+import { addTodo } from "../../redux/actions/todos";
 
 const CreateToDo = () => {
+    const dispatch = useDispatch()
+
     const handleSubmit = data => {
+        dispatch(addTodo(data))
         console.log(data)
     }
     return (
