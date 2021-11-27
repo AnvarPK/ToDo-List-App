@@ -1,12 +1,12 @@
 import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import DoneIcon from '@mui/icons-material/Done';
 import EditIcon from '@mui/icons-material/Edit';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Card, CardActions, CardContent, CardHeader, IconButton, Tooltip, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
-import { styles } from './style';
-import Modal from '../ui/modal'
 import { useState } from 'react';
+import Modal from '../ui/modal';
+import { styles } from './style';
 
 const ToDo = (props) => {
     const { title, date, isGridType } = props;
@@ -72,7 +72,7 @@ const ToDo = (props) => {
 export default ToDo
 
 ToDo.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     date: PropTypes.string,
     isGridType: PropTypes.bool,
 }
