@@ -13,6 +13,7 @@
 3. Forever Detele
 4. Restore Deleted ToDo
 5. Dark mode
+6. LocalStorage
 
 ## Deployed
 1. [GoodBits ToDo App URL](https://to-do-list-app-ashen.vercel.app/)
