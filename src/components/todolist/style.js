@@ -7,19 +7,24 @@ export const styles = {
         color: 'text.secondary',
 
     },
-    cardActions:{
+    cardActions: {
         display: 'flex',
         justifyContent: 'flex-end',
     },
     addTodo: {
         textDecoration: 'none',
     },
-    navLink:{
-        '&:disabled':{
+    navLink: {
+        '&:disabled': {
             pointerEvents: 'none'
         }
     },
-    todoCompleted:{
+    todoCompleted: {
         backgroundColor: 'background.paperDisabled',
+    },
+    carSubdHeader: {
+        "& .MuiCardHeader-subheader": {
+            fontSize: '0.8rem'
+        }
     }
 }
