@@ -20,7 +20,7 @@ const EditToDo = (props) => {
             <ToDoListButton />
             <Grid container spacing={2} >
                 <Grid item xs={12}>
-                    <Typography variant="h6" >Edit To Do</Typography>
+                    <Typography variant="h6" color="primary" >Edit To Do</Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <ToDoForm todo={todo} buttonLabel="Update" handleSubmit={handleSubmit} />

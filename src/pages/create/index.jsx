@@ -15,7 +15,7 @@ const CreateToDo = () => {
             <ToDoListButton />
             <Grid container spacing={2} >
                 <Grid item xs={12}>
-                    <Typography variant="h6" >Create To Do</Typography>
+                    <Typography variant="h6" color="primary"  >Create To Do</Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <ToDoForm handleSubmit={handleSubmit} />

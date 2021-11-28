@@ -18,5 +18,8 @@ export const styles = {
         '&:disabled':{
             pointerEvents: 'none'
         }
+    },
+    todoCompleted:{
+        backgroundColor: 'background.paperDisabled',
     }
 }

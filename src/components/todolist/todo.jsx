@@ -91,7 +91,7 @@ const ToDo = (props) => {
     }
 
     return (<>
-        <Card xs={2} sx={{ ...styles.card, background: todo.isCompleted ? grey[100] : 'transparent' }}>
+        <Card xs={2} sx={{ ...styles.card, ...(todo.isCompleted && styles.todoCompleted) }}>
             <CardHeader
                 action={renderCardHeaderAction()}
                 title={todo.title}

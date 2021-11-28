@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { APP_CONSTANTS } from '../../appconsts';
+import { styles } from './style';
 
 const ToDoForm = (props) => {
     const { todo, buttonLabel, handleSubmit } = props;
@@ -16,7 +17,7 @@ const ToDoForm = (props) => {
     });
     const onSubmit = e => {
         e.preventDefault();
-        if (formData.title.trim()) {
+        if (formData.title?.trim()) {
             setErrors(prev => ({
                 ...prev, title: false
             }));
@@ -39,6 +40,8 @@ const ToDoForm = (props) => {
                         label="Title"
                         variant="standard"
                         fullWidth
+                        color="primary"
+                        sx={styles.textFieldColor}
                         helperText={errors.title ? "Title Cannot be Empty" : null}
                         onChange={e => setFormData(prev => ({ ...prev, title: e.target.value }))}
                     />
@@ -51,6 +54,8 @@ const ToDoForm = (props) => {
                         variant="standard"
                         multiline
                         fullWidth
+                        color="primary"
+                        sx={styles.textFieldColor}
                         onChange={e => setFormData(prev => ({ ...prev, description: e.target.value }))}
                     />
                 </FormControl>

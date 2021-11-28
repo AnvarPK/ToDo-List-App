@@ -13,26 +13,28 @@ export const getDesignTokens = (mode) => ({
                 },
                 background: {
                     default: teal[900],
-                    paper: teal[100],
+                    paperDisabled: teal[50],
                 },
                 text: {
                     primary: teal[900],
                     secondary: teal[500],
+                    input: grey[900],
                 },
             }
             : {
                 // palette values for dark mode
                 primary: {
-                    main: blueGrey[900],
+                    main: grey[900],
                 },
-                divider: blueGrey[700],
+                divider: grey[700],
                 background: {
-                    default: blueGrey[900],
-                    paper: blueGrey[900],
+                    default: grey[900],
+                    paperDisabled: grey[300],
                 },
                 text: {
-                    primary: '#fff',
+                    primary: grey[100],
                     secondary: grey[500],
+                    input: grey[900],
                 },
             }),
     },
