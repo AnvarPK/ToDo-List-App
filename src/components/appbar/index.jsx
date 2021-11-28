@@ -14,7 +14,7 @@ const AppBar = () => {
                             component="div"
                             sx={{ mr: 2 }}
                         >
-                            ToDo List App
+                            GoodBits ToDo App
                         </Typography>
                     </Toolbar>
                     <ThemeSwich />
