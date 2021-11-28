@@ -12,6 +12,7 @@
 2. Deleted ToDo List page visible on small screen
 3. Forever Detele
 4. Restore Deleted ToDo
+5. Dark mode
 
 ## Deployed
 1. [GoodBits ToDo App URL](https://to-do-list-app-ashen.vercel.app/)
@@ -26,3 +27,6 @@
 2. [Material UI](https://mui.com/)
 3. [React Redux](https://react-redux.js.org/)
 4. [Date fns](https://date-fns.org/)
+
+## Resources
+1. [Dark mode](https://mui.com/customization/dark-mode/)

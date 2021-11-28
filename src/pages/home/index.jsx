@@ -37,7 +37,7 @@ const Home = () => {
             <Grid container spacing={2} alignItems="flex-start">
                 <Grid container item xs={12} md={8} >
                     <Grid item xs={12}>
-                        <Typography variant="h6" >To-Dos</Typography>
+                        <Typography variant="h6" color="primary">To-Dos</Typography>
                     </Grid>
                     <Grid item xs={12}>
                         <ToDoList items={todos} />
@@ -45,7 +45,7 @@ const Home = () => {
                 </Grid>
                 <Grid container item xs={4} sx={styles.deletedList}>
                     <Grid item xs={12}>
-                        <Typography variant="h6" >Deleted To-Dos</Typography>
+                        <Typography variant="h6" color="primary" >Deleted To-Dos</Typography>
                     </Grid>
                     <Grid item xs={12}>
                         <ToDoList viewType={APP_CONSTANTS.VIEW_TYPES.LIST} items={deletedTodos} />
