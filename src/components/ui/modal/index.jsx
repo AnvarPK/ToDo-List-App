@@ -1,5 +1,4 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
-import React from 'react'
+import { Button, Dialog, DialogActions, DialogTitle } from '@mui/material';
 
 const Modal = (props) => {
     const { open, handleClose, handleDelete } = props

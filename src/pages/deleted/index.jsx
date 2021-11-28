@@ -1,9 +1,9 @@
-import { Grid, Typography } from "@mui/material"
-import { APP_CONSTANTS } from "../../appconsts";
-import ToDoList from "../../components/todolist"
-import ToDoListButton from "../../components/todolist/todolistbutton";
-import { createSelector } from 'reselect';
+import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import { createSelector } from 'reselect';
+import { APP_CONSTANTS } from "../../appconsts";
+import ToDoList from "../../components/todolist";
+import ToDoListButton from "../../components/todolist/todolistbutton";
 
 const DeletedTodos = createSelector(
     (state) => state.todos,

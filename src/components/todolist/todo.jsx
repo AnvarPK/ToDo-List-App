@@ -1,8 +1,11 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import DoneIcon from '@mui/icons-material/Done';
 import EditIcon from '@mui/icons-material/Edit';
+import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 import { Card, CardActions, CardContent, CardHeader, IconButton, Tooltip, Typography } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import { formatDistance } from 'date-fns';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
@@ -12,10 +15,6 @@ import { completeTodo, deleteTodo, removeTodo, restoreTodo } from '../../redux/a
 import Modal from '../ui/modal';
 import { NavLink } from '../ui/navlink';
 import { styles } from './style';
-import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
-import ToggleOffIcon from '@mui/icons-material/ToggleOff';
-import ToggleOnIcon from '@mui/icons-material/ToggleOn';
-import { grey } from '@mui/material/colors';
 
 const ToDo = (props) => {
     const { todo, isGridType } = props;
