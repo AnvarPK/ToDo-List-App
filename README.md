@@ -14,7 +14,7 @@
 4. Restore Deleted ToDo
 
 ## Deployed
-1. [GoodBits ToDo App](https://to-do-list-app-ashen.vercel.app/)
+1. [GoodBits ToDo App URL](https://to-do-list-app-ashen.vercel.app/)
 2. [Platform: Vercel](https://vercel.com/)
 
 ## Source Code
