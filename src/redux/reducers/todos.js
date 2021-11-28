@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../consts";
+import { ADD_TODO, DELETE_TODO, REMOVE_TODO, RESTORE_TODO, TOGGLE_TODO, UPDATE_TODO } from "../consts";
 
 export const todoReducer = (state = [], action) => {
     const { type, payload } = action;
@@ -11,25 +11,43 @@ export const todoReducer = (state = [], action) => {
                     id: date.getTime(),
                     title: payload.title,
                     description: payload.description,
-                    completed: false,
+                    isCompleted: false,
                     isDeleted: false,
                     date
                 }
             ];
-        case REMOVE_TODO:
+        case DELETE_TODO:
             return state.map(todo => {
-                console.log(todo.id , payload, todo.id === payload)
                 if (todo.id === payload) {
                     return { ...todo, isDeleted: true };
                 }
                 return todo;
             });
+        case RESTORE_TODO:
+            return state.map(todo => {
+                if (todo.id === payload) {
+                    return { ...todo, isDeleted: false };
+                }
+                return todo;
+            });
+        case REMOVE_TODO:
+            return state.filter(todo => todo.id !== payload);
         case TOGGLE_TODO:
             return state.map(todo => {
                 if (todo.id === payload) {
                     return {
                         ...todo,
-                        completed: !todo.completed
+                        isCompleted: !todo.isCompleted
+                    };
+                }
+                return todo;
+            });
+        case UPDATE_TODO:
+            return state.map(todo => {
+                if (todo.id === payload.id) {
+                    return {
+                        ...todo,
+                        ...payload
                     };
                 }
                 return todo;

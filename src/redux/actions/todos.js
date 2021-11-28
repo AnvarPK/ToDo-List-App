@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "../consts";
+import { ADD_TODO, DELETE_TODO, REMOVE_TODO, RESTORE_TODO, TOGGLE_TODO, UPDATE_TODO } from "../consts";
 
 export const addTodo = (payload) => ({
     type: ADD_TODO,
@@ -10,7 +10,22 @@ export const removeTodo = (payload) => ({
     payload
 })
 
+export const deleteTodo = (payload) => ({
+    type: DELETE_TODO,
+    payload
+})
+
+export const restoreTodo = (payload) => ({
+    type: RESTORE_TODO,
+    payload
+})
+
 export const completeTodo = (payload) => ({
     type: TOGGLE_TODO,
+    payload
+})
+
+export const updateTodo = (payload) => ({
+    type: UPDATE_TODO,
     payload
 })

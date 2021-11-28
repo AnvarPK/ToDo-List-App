@@ -14,4 +14,9 @@ export const styles = {
     addTodo: {
         textDecoration: 'none',
     },
+    navLink:{
+        '&:disabled':{
+            pointerEvents: 'none'
+        }
+    }
 }

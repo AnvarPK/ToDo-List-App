@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { APP_CONSTANTS } from '../../appconsts';
 
 const ToDoForm = (props) => {
-    const { buttonLabel, handleSubmit } = props;
+    const { todo, buttonLabel, handleSubmit } = props;
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        title: '',
-        description: '',
+        title: todo?.title,
+        description: todo?.description,
     })
     const [errors, setErrors] = useState({
         title: false,
