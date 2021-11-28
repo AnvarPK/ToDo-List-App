@@ -15,7 +15,7 @@
 
 ## Deployed
 1. [GoodBits ToDo App](https://to-do-list-app-ashen.vercel.app/)
-2. [Paltform: Vercel](https://vercel.com/)
+2. [Platform: Vercel](https://vercel.com/)
 
 ## Source Code
 1. [Source Code](https://github.com/AnvarPK/ToDo-List-App)
