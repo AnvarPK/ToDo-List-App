@@ -96,7 +96,7 @@ const ToDo = (props) => {
                 action={renderCardHeaderAction()}
                 title={todo.title}
                 sx={{ textDecoration, ...styles.carSubdHeader }}
-                subheader={isGridType ? `Added ${formatDistance(todo.date, new Date(), { addSuffix: true })}` : null}
+                subheader={isGridType ? `Added ${formatDistance(new Date(todo.date), new Date(), { addSuffix: true })}` : null}
             />
             {isGridType && renderCardItems()}
         </Card>

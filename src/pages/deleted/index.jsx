@@ -17,7 +17,7 @@ const DeletedToDos = () => {
         <ToDoListButton />
         <Grid container  >
             <Grid item xs={12}>
-                <Typography variant="h6" >To-Dos</Typography>
+                <Typography variant="h6" >Deleted To-Dos</Typography>
             </Grid>
             <Grid item xs={12}>
                 <ToDoList items={deletedTodos} viewType={APP_CONSTANTS.VIEW_TYPES.LIST} />
